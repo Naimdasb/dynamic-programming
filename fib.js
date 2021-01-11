@@ -1,8 +1,8 @@
 const { performance } = require('perf_hooks')
 
-function fib(n, memo = []) {
+function fib(n) {
     if (n <= 2) return 1
-    return fib(n - 1, memo) + fib(n - 2, memo);
+    return fib(n - 1) + fib(n - 2);
 }
 
 function fibMemo(n, memo = []) {
@@ -26,7 +26,7 @@ function fibTab(n) {
     return numbers[n]
 }
 
-/* let start = performance.now()
+let start = performance.now()
 console.log(fib(5));
 let end = performance.now()
 console.log(end - start)
@@ -34,7 +34,7 @@ console.log(end - start)
 let startMemo = performance.now()
 console.log(fibMemo(5));
 let endMemo = performance.now()
-console.log(endMemo - startMemo) */
+console.log(endMemo - startMemo)
 
 let startTab = performance.now()
 console.log(fibTab(50))
